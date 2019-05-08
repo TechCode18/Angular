@@ -1,0 +1,59 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<router-outlet></router-outlet>
+<div>
+  <app-header></app-header>
+  <div>
+    <table border="2">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Status</th>
+        </thead>
+        <tbody *ngFor="let ind of listOfData">
+          <tr>
+            <td>{{ind.id}}</td>
+            <td>{{ind.name}}</td>
+            <td>{{ind.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br/>
+      <br/>
+      <table border="2">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Dept</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>kjd</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>koij</td>
+            <td>B</td>
+          </tr>
+          <tr *ngIf='isClicked'>
+            <td>iuh</td>
+            <td>C</td>
+          </tr>
+          <tr *ngIf='isClicked'>
+            <td>kowudi</td>
+            <td>B</td>
+          </tr>
+        </tbody>
+      </table>
+      <!--<button on-click=tuggleOn()>show</button>-->
+      <button (click)=tuggleOn()>
+        Show {{isClicked ? 'less' : 'more'}}
+      </button>
+      <br/><br/>
+      <a routerLink="/foot" routerLinkActive="active">Footer</a><br/>
+      <a routerLink="/head" routerLinkActive="active">Header</a><br/>
+      <a routerLink="/register_form">Register</a><br/>
+      Two way data binfing : <input type="text" value={bind=$event.target.value}>
+      <h3>{{bind}}</h3>
+  </div>
+</div>
