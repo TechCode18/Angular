@@ -53,7 +53,8 @@
       <a routerLink="/foot" routerLinkActive="active">Footer</a><br/>
       <a routerLink="/head" routerLinkActive="active">Header</a><br/>
       <a routerLink="/register_form">Register</a><br/>
-      Two way data binfing : <input type="text" value={bind=$event.target.value}>
+      <!-- Two way data binfing : <input type="text" [value]='bind' (input)='bind=$event.target.value'> -->
+      Two way data binfing : <input type="text" [(ngModel)]='bind'>
       <h3>{{bind}}</h3>
   </div>
 </div>
