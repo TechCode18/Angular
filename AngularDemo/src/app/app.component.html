@@ -56,5 +56,14 @@
       <!-- Two way data binfing : <input type="text" [value]='bind' (input)='bind=$event.target.value'> -->
       Two way data binfing : <input type="text" [(ngModel)]='bind'>
       <h3>{{bind}}</h3>
+      <p *ngIf='isClicked'>{{bind}} to App</p>
+
+      <div *ngFor='let pic of img'>
+        <ul>
+          <li>{{pic.id}}</li>
+          <img [src]='pic.loc'/>
+        </ul>
+      </div>
   </div>
 </div>
+
